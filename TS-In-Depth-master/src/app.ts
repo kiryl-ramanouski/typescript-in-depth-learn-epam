@@ -65,13 +65,8 @@ const logFirstAvailable = (books: Book[]): void => {
 };
 
 // =================================================
-const getBookTitlesByCategory = (category: Category, books: Book[]) => {
-    const bookTitlesByCategory: Array<string> = [];
-    books.forEach(book => {
-        if (book.category === category) {
-            bookTitlesByCategory.push(book.title);
-        }
-    });
-    return bookTitlesByCategory;
+const getBookTitlesByCategory = (category: Category): Array<string> => {
+    const books: Book[] = getAllBooks();
+    return books.filter(book => book.category === category).map(book => book.title);
 };
-console.log(getBookTitlesByCategory(Category.JavaScript, getAllBooks()));
+console.log(getBookTitlesByCategory(Category.JavaScript));
