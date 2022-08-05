@@ -69,4 +69,10 @@ const getBookTitlesByCategory = (category: Category): Array<string> => {
     const books: Book[] = getAllBooks();
     return books.filter(book => book.category === category).map(book => book.title);
 };
-console.log(getBookTitlesByCategory(Category.JavaScript));
+
+// =================================================
+const logBookTitles = (titles: string[]): void => {
+    titles.forEach(title => console.log(title));
+};
+const titles = getBookTitlesByCategory(Category.JavaScript);
+logBookTitles(titles);
