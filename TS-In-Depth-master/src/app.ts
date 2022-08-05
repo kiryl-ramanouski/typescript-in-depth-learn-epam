@@ -63,6 +63,15 @@ const logFirstAvailable = (books: Book[]): void => {
     console.log(`Books quantity is ${booksQuantity}`);
     console.log(`First available book name is ${firstAvailableBookTitle}`);
 };
-logFirstAvailable(getAllBooks());
 
 // =================================================
+const getBookTitlesByCategory = (category: Category, books: Book[]) => {
+    const bookTitlesByCategory: Array<string> = [];
+    books.forEach(book => {
+        if (book.category === category) {
+            bookTitlesByCategory.push(book.title);
+        }
+    });
+    return bookTitlesByCategory;
+};
+console.log(getBookTitlesByCategory(Category.JavaScript, getAllBooks()));
