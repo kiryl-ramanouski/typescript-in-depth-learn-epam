@@ -82,4 +82,14 @@ const getBookAuthorByIndex = (index: number): [string, string] => {
     const { title, author } = books[index];
     return [title, author];
 };
-console.log(getBookAuthorByIndex(0));
+
+// =================================================
+const calcTotalPages = (): bigint => {
+    const libraries: any[] = [
+        { lib: 'libName1', books: 1_000_000_000, avgPagesPerBook: 250 },
+        { lib: 'libName2', books: 5_000_000_000, avgPagesPerBook: 300 },
+        { lib: 'libName3', books: 3_000_000_000, avgPagesPerBook: 280 },
+    ];
+    return libraries.reduce((acc, lib) => acc + BigInt(lib.books) * BigInt(lib.avgPagesPerBook), 0n);
+};
+console.log(calcTotalPages());
