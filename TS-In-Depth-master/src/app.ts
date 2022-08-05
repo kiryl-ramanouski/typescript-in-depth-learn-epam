@@ -75,4 +75,11 @@ const logBookTitles = (titles: string[]): void => {
     titles.forEach(title => console.log(title));
 };
 const titles = getBookTitlesByCategory(Category.JavaScript);
-logBookTitles(titles);
+
+// =================================================
+const getBookAuthorByIndex = (index: number): [string, string] => {
+    const books = getAllBooks();
+    const { title, author } = books[index];
+    return [title, author];
+};
+console.log(getBookAuthorByIndex(0));
