@@ -92,4 +92,3 @@ const calcTotalPages = (): bigint => {
     ];
     return libraries.reduce((acc, lib) => acc + BigInt(lib.books) * BigInt(lib.avgPagesPerBook), 0n);
 };
-console.log(calcTotalPages());
