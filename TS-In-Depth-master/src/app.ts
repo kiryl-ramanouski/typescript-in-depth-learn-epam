@@ -22,3 +22,12 @@ const getAllBooks = (): Book[] => {
     ];
     return allBooks;
 };
+
+// =================================================
+const logFirstAvailable = (books: Book[]): void => {
+    const booksQuantity: number = books.length;
+    const firstAvailableBookTitle: string = books.find(book => book.available).title;
+    console.log(`Books quantity is ${booksQuantity}`);
+    console.log(`First available book name is ${firstAvailableBookTitle}`);
+};
+logFirstAvailable(getAllBooks());
