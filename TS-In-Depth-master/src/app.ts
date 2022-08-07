@@ -22,8 +22,8 @@ type Book = {
     available: boolean;
 };
 
-const getAllBooks = (): Book[] => {
-    const allBooks = [
+const getAllBooks = (): readonly Book[] => {
+    const allBooks = <const>[
         {
             id: 1,
             title: 'Refactoring JavaScript',
@@ -66,7 +66,7 @@ const logFirstAvailable = (books: Book[]): void => {
 
 // =================================================
 const getBookTitlesByCategory = (category: Category): Array<string> => {
-    const books: Book[] = getAllBooks();
+    const books = getAllBooks();
     return books.filter(book => book.category === category).map(book => book.title);
 };
 
@@ -85,7 +85,7 @@ const getBookAuthorByIndex = (index: number): [string, string] => {
 
 // =================================================
 const calcTotalPages = (): bigint => {
-    const libraries: any[] = [
+    const libraries = <const>[
         { lib: 'libName1', books: 1_000_000_000, avgPagesPerBook: 250 },
         { lib: 'libName2', books: 5_000_000_000, avgPagesPerBook: 300 },
         { lib: 'libName3', books: 3_000_000_000, avgPagesPerBook: 280 },
