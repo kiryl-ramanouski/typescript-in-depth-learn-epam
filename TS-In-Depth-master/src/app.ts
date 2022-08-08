@@ -57,7 +57,7 @@ const getAllBooks = (): readonly Book[] => {
 };
 
 // =================================================
-const logFirstAvailable = (books: Book[]): void => {
+const logFirstAvailable = (books: ReadonlyArray<Book> = getAllBooks()): void => {
     const booksQuantity: number = books.length;
     const firstAvailableBookTitle: string = books.find(book => book.available)?.title;
     console.log(`Books quantity is ${booksQuantity}`);
@@ -114,5 +114,3 @@ const createCustomer = (name: string, age?: number, city?: string): void => {
         console.log(`Customer city: ${name}`);
     }
 };
-
-createCustomer('Boris', 15, 'Minsk');
