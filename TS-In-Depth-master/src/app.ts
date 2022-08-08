@@ -119,3 +119,11 @@ const getBookByID = (id: number): Book => {
     const books = getAllBooks();
     return books.find(book => book.id === id);
 };
+
+const checkoutBooks = (customer: string, ...bookIds: number[]): string[] => {
+    console.log(`Customer Name: ${customer}`);
+    return bookIds
+        .map(id => getBookByID(id))
+        .filter(book => book.available)
+        .map(book => book.title);
+};
