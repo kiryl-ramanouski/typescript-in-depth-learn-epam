@@ -114,3 +114,8 @@ const createCustomer = (name: string, age?: number, city?: string): void => {
         console.log(`Customer city: ${name}`);
     }
 };
+
+const getBookByID = (id: number): Book => {
+    const books = getAllBooks();
+    return books.find(book => book.id === id);
+};
