@@ -98,13 +98,21 @@ const calcTotalPages = (): bigint => {
 const createCustomerID = (name: string, id: number): string => {
     return `${id}-${name}`;
 };
-
 let myId: string = createCustomerID('Ann', 10);
-
 let idGenerator: (name: string, id: number) => string = (name: string, id: number) => `${id}-${name}`;
-
 idGenerator = createCustomerID;
-
 myId = idGenerator('Boris', 2);
 
-console.log(myId);
+// =================================================
+
+const createCustomer = (name: string, age?: number, city?: string): void => {
+    console.log(`Customer Name: ${name}`);
+    if (age) {
+        console.log(`Customer age: ${name}`);
+    }
+    if (city) {
+        console.log(`Customer city: ${name}`);
+    }
+};
+
+createCustomer('Boris', 15, 'Minsk');
