@@ -124,6 +124,6 @@ const checkoutBooks = (customer: string, ...bookIds: number[]): string[] => {
     console.log(`Customer Name: ${customer}`);
     return bookIds
         .map(id => getBookByID(id))
-        .filter(book => book.available)
+        .filter(book => book?.available)
         .map(book => book.title);
 };
