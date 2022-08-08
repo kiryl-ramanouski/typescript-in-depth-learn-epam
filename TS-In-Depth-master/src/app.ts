@@ -100,3 +100,4 @@ const createCustomerID = (name: string, id: number): string => {
 };
 const myID: string = createCustomerID('Ann', 10);
 console.log(myID);
+const idGenerator: (name: string, id: number) => string = (name: string, id: number) => `${id}-${name}`;
