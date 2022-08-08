@@ -98,3 +98,5 @@ const calcTotalPages = (): bigint => {
 const createCustomerID = (name: string, id: number): string => {
     return `${id}-${name}`;
 };
+const myID: string = createCustomerID('Ann', 10);
+console.log(myID);
