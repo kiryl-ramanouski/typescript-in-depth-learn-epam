@@ -138,3 +138,9 @@ function getTitles(...args: (string | boolean | number)[]): string[] {
         return books.filter(book => book.id === id && book.available === available).map(book => book.title);
     }
 }
+
+const assertStringValue = (value: any): asserts value is string => {
+    if (typeof value !== 'string') {
+        throw new Error('value should have been a string');
+    }
+};
