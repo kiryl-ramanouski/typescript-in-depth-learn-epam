@@ -14,13 +14,21 @@ enum Category {
     Angular,
 }
 
-type Book = {
+// type Book = {
+//     id: number;
+//     title: string;
+//     category: Category;
+//     author: string;
+//     available: boolean;
+// };
+
+interface Book {
     id: number;
     title: string;
     category: Category;
     author: string;
     available: boolean;
-};
+}
 
 const getAllBooks = (): readonly Book[] => {
     const allBooks = <const>[
