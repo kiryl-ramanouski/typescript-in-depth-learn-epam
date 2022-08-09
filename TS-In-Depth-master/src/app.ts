@@ -1,4 +1,4 @@
-/* Eslint-disable no-redeclare */
+/* eslint-disable no-redeclare */
 showHello('greeting', 'TS');
 
 function showHello(divName: string, name: string) {
@@ -118,3 +118,23 @@ const checkoutBooks = (customer: string, ...bookIds: number[]): string[] => {
         .filter(book => book?.available)
         .map(book => book.title);
 };
+
+function getTitles(author: string): string[];
+function getTitles(available: boolean): string[];
+function getTitles(id: number, available: boolean): string[];
+
+function getTitles(...args: (string | boolean | number)[]): string[] {
+    const books = getAllBooks();
+    if (args.length === 1) {
+        const [arg] = args;
+        if (typeof arg === 'string') {
+            return books.filter(book => book.author === arg).map(book => book.title);
+        }
+        if (typeof arg === 'boolean') {
+            return books.filter(book => book.available === arg).map(book => book.title);
+        }
+    } else if (args.length === 2) {
+        const [id, available] = args;
+        return books.filter(book => book.id === id && book.available === available).map(book => book.title);
+    }
+}
