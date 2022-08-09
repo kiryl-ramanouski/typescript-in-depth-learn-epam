@@ -3,7 +3,7 @@ showHello('greeting', 'TS');
 
 function showHello(divName: string, name: string) {
     const elt = document.getElementById(divName);
-    elt.innerText = `Make my day with ${name}`;
+    elt.innerText = `Make my day ${name}`;
 }
 
 enum Category {
@@ -173,5 +173,7 @@ const myBook: Book = {
     available: true,
     category: Category.CSS,
     pages: 200,
+    markDamaged: reason => console.log(`Damaged: ${reason}`),
 };
 printBook(myBook);
+myBook.markDamaged('missing back cover');
