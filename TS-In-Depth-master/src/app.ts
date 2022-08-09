@@ -163,3 +163,14 @@ const bookTitleTransform = (title: any): string => {
 const printBook = (book: Book): void => {
     console.log(`${book.title} by ${book.author}`);
 };
+
+const myBook = {
+    id: 5,
+    title: 'Colors, Backgrounds, and Gradients',
+    author: 'Eric A. Meyer',
+    available: true,
+    category: Category.CSS,
+    year: 2015,
+    copies: 3,
+};
+printBook(myBook);
