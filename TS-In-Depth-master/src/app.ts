@@ -119,6 +119,7 @@ const checkoutBooks = (customer: string, ...bookIds: number[]): string[] => {
         .map(book => book.title);
 };
 
+// Overloaded functions must have function declaration type
 function getTitles(author: string): string[];
 function getTitles(available: boolean): string[];
 function getTitles(id: number, available: boolean): string[];
@@ -139,8 +140,14 @@ function getTitles(...args: (string | boolean | number)[]): string[] {
     }
 }
 
-const assertStringValue = (value: any): asserts value is string => {
+// Assert functions must have function declaration type.
+function assertStringValue(value: any): asserts value is string {
     if (typeof value !== 'string') {
         throw new Error('value should have been a string');
     }
+}
+
+const bookTitleTransform = (title: any): string => {
+    assertStringValue(title);
+    return [...title].reverse().join('');
 };
