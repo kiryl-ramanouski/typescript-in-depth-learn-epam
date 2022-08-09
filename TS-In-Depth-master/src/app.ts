@@ -28,6 +28,7 @@ interface Book {
     category: Category;
     author: string;
     available: boolean;
+    pages?: number;
 }
 
 const getAllBooks = (): readonly Book[] => {
@@ -164,13 +165,12 @@ const printBook = (book: Book): void => {
     console.log(`${book.title} by ${book.author}`);
 };
 
-const myBook = {
+const myBook: Book = {
     id: 5,
     title: 'Colors, Backgrounds, and Gradients',
     author: 'Eric A. Meyer',
     available: true,
     category: Category.CSS,
-    year: 2015,
-    copies: 3,
+    pages: 200,
 };
 printBook(myBook);
