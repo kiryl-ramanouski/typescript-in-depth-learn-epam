@@ -1,3 +1,4 @@
+/* Eslint-disable no-redeclare */
 showHello('greeting', 'TS');
 
 function showHello(divName: string, name: string) {
