@@ -29,6 +29,7 @@ interface Book {
     author: string;
     available: boolean;
     pages?: number;
+    markDamaged?: (reason: string) => void;
 }
 
 const getAllBooks = (): readonly Book[] => {
