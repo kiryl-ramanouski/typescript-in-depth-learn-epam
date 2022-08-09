@@ -22,6 +22,11 @@ enum Category {
 //     available: boolean;
 // };
 
+interface DamageLogger {
+    (p: string): void;
+}
+const logDamage: DamageLogger = reason => console.log(`Damaged: ${reason}`);
+
 interface Book {
     id: number;
     title: string;
@@ -29,7 +34,8 @@ interface Book {
     author: string;
     available: boolean;
     pages?: number;
-    markDamaged?: (reason: string) => void;
+    // markDamaged?: (reason: string) => void;
+    markDamaged?: DamageLogger;
 }
 
 const getAllBooks = (): readonly Book[] => {
