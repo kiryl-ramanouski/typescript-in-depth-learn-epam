@@ -159,3 +159,7 @@ const bookTitleTransform = (title: any): string => {
     assertStringValue(title);
     return [...title].reverse().join('');
 };
+
+const printBook = (book: Book): void => {
+    console.log(`${book.title} by ${book.author}`);
+};
