@@ -235,12 +235,16 @@ const getProperty = (book: Book, prop: BookProperties): any => {
 // console.log(getProperty(getAllBooks()[0], 'isbn'));
 
 class ReferenceItem {
-    title: string;
-    year: number;
-    constructor(newTitle: string, newYear: number) {
+    // title: string;
+    // year: number;
+    // constructor(newTitle: string, newYear: number) {
+    //     console.log('Creating a new ReferenceItem');
+    //     this.title = newTitle;
+    //     this.year = newYear;
+    // }
+
+    constructor(public title: string, private year: number) {
         console.log('Creating a new ReferenceItem');
-        this.title = newTitle;
-        this.year = newYear;
     }
 
     printItem(): void {
