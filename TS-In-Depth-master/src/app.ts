@@ -123,7 +123,7 @@ const createCustomer = (name: string, age?: number, city?: string): void => {
     }
 };
 
-const getBookByID = (id: Book['id']): Book | undefined => {
+const getBookByID = (id: Book['id']): BookOrUndefined => {
     const books = getAllBooks();
     return books.find(book => book.id === id);
 };
@@ -304,3 +304,17 @@ class UniversityLibrarian implements Librarian  {
 // const favoriteLibrarian: Librarian = new UniversityLibrarian();
 // favoriteLibrarian.name = 'Kate';
 // favoriteLibrarian.assistCustomer('Kiryl');
+
+// Intersection and union types
+type PersonBook = Person & Book;
+let pb: PersonBook = {
+    id: 1,
+    name: 'Ann',
+    title: 'Js',
+    author: 'Ann',
+    available: false,
+    category: Category.Angular,
+    email: 'ann@gmail.com',
+    markDamaged: null,
+};
+type BookOrUndefined = Book | undefined;
