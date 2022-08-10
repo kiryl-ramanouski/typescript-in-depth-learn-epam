@@ -237,13 +237,17 @@ const getProperty = (book: Book, prop: BookProperties): any => {
 class ReferenceItem {
     title: string;
     year: number;
-
     constructor(newTitle: string, newYear: number) {
         console.log('Creating a new ReferenceItem');
         this.title = newTitle;
         this.year = newYear;
     }
+
     printItem(): void {
-        `${this.title} was published in ${this.year}`;
+        console.log(`${this.title} was published in ${this.year}`);
     }
 }
+
+const ref = new ReferenceItem('JavaScrip', 2022);
+console.log(ref);
+ref.printItem();
