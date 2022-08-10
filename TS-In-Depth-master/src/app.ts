@@ -233,3 +233,17 @@ const getProperty = (book: Book, prop: BookProperties): any => {
 // console.log(getProperty(getAllBooks()[0], 'title'));
 // console.log(getProperty(getAllBooks()[0], 'markDamaged'));
 // console.log(getProperty(getAllBooks()[0], 'isbn'));
+
+class ReferenceItem {
+    title: string;
+    year: number;
+
+    constructor(newTitle: string, newYear: number) {
+        console.log('Creating a new ReferenceItem');
+        this.title = newTitle;
+        this.year = newYear;
+    }
+    printItem(): void {
+        `${this.title} was published in ${this.year}`;
+    }
+}
