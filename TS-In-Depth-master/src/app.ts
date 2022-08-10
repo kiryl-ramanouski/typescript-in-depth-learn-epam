@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 /* eslint-disable no-redeclare */
 showHello('greeting', 'TS');
 
@@ -243,6 +244,14 @@ class ReferenceItem {
     //     this.year = newYear;
     // }
 
+    private _publisher: string;
+    get publisher(): string {
+        return this._publisher.toUpperCase();
+    }
+    set publisher(newPublisher: string) {
+        this._publisher = newPublisher;
+    }
+
     constructor(public title: string, private year: number) {
         console.log('Creating a new ReferenceItem');
     }
@@ -255,3 +264,5 @@ class ReferenceItem {
 const ref = new ReferenceItem('JavaScrip', 2022);
 console.log(ref);
 ref.printItem();
+ref.publisher = 'Naval Action';
+console.log(ref.publisher);
