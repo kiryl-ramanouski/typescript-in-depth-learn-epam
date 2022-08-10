@@ -181,8 +181,6 @@ const myBook: Book = {
     pages: 200,
     markDamaged: reason => console.log(`Damaged: ${reason}`),
 };
-printBook(myBook);
-myBook.markDamaged('missing back cover');
 
 interface Person {
     name: string;
@@ -210,3 +208,14 @@ const favoriteLibrarian: Librarian = {
     department: 'mobility',
     assistCustomer: (custName: string) => `Hello ${custName} Please take your book`,
 };
+
+const offer: any = {
+    book: {
+        title: 'Essential TypeScript',
+    },
+};
+
+// console.log(offer.magazine);
+// console.log(offer.magazine?.getTitle());
+// console.log(offer.book.getTitle?.());
+// console.log(offer.book.authors?.[0]);
