@@ -235,7 +235,7 @@ const getProperty = (book: Book, prop: BookProperties): any => {
 // console.log(getProperty(getAllBooks()[0], 'markDamaged'));
 // console.log(getProperty(getAllBooks()[0], 'isbn'));
 
-class ReferenceItem {
+abstract class ReferenceItem {
     // title: string;
     // year: number;
     // constructor(newTitle: string, newYear: number) {
@@ -267,6 +267,8 @@ class ReferenceItem {
     printItem(): void {
         console.log(`${this.title} was published in ${this.year}. Department: ${ReferenceItem.department}`);
     }
+
+    abstract printCitation(): void;
 }
 
 // const ref = new ReferenceItem(1, 'JavaScrip', 2022);
@@ -280,7 +282,11 @@ class Encyclopedia extends ReferenceItem {
         super.printItem();
         console.log(`Edition: ${this.edition} ${this.year}`);
     }
+    printCitation(): void {
+        console.log(`${this.title} - ${this.year}`);
+    }
 }
 
 // const refBook = new Encyclopedia(1, 'I love TS', 2021, 2);
 // refBook.printItem();
+// refBook.printCitation();
