@@ -183,3 +183,30 @@ const myBook: Book = {
 };
 printBook(myBook);
 myBook.markDamaged('missing back cover');
+
+interface Person {
+    name: string;
+    email: string;
+}
+
+interface Author extends Person {
+    numBooksPublished: number;
+}
+
+interface Librarian extends Person {
+    department: string;
+    assistCustomer: (custName: string) => void;
+}
+
+const favoriteAuthor: Author = {
+    name: 'Anna',
+    email: 'anna@gmail.com',
+    numBooksPublished: 5,
+};
+
+const favoriteLibrarian: Librarian = {
+    name: 'Anton',
+    email: 'anton@gmail.com',
+    department: 'mobility',
+    assistCustomer: (custName: string) => `Hello ${custName} Please take your book`,
+};
