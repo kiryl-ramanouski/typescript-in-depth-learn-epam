@@ -219,3 +219,17 @@ const offer: any = {
 // console.log(offer.magazine?.getTitle());
 // console.log(offer.book.getTitle?.());
 // console.log(offer.book.authors?.[0]);
+
+type BookProperties = keyof Book;
+
+const getProperty = (book: Book, prop: BookProperties): any => {
+    if (typeof book === 'function') {
+        const f = book[prop] as Function;
+        return f.name;
+    }
+    return book[prop];
+};
+
+// console.log(getProperty(getAllBooks()[0], 'title'));
+// console.log(getProperty(getAllBooks()[0], 'markDamaged'));
+// console.log(getProperty(getAllBooks()[0], 'isbn'));
