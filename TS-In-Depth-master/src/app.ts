@@ -259,7 +259,7 @@ class ReferenceItem {
 
     static department = 'JavaScript department';
 
-    constructor(id: number, public title: string, private year: number) {
+    constructor(id: number, public title: string, protected year: number) {
         console.log('Creating a new ReferenceItem');
         this.#id = id;
     }
@@ -269,5 +269,18 @@ class ReferenceItem {
     }
 }
 
-const ref = new ReferenceItem(1, 'JavaScrip', 2022);
-ref.printItem();
+// const ref = new ReferenceItem(1, 'JavaScrip', 2022);
+// ref.printItem();
+
+class Encyclopedia extends ReferenceItem {
+    constructor(id: number, title: string, year: number, public edition: number) {
+        super(id, title, year);
+    }
+    override printItem(): void {
+        super.printItem();
+        console.log(`Edition: ${this.edition} ${this.year}`);
+    }
+}
+
+// const refBook = new Encyclopedia(1, 'I love TS', 2021, 2);
+// refBook.printItem();
