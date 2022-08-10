@@ -203,12 +203,12 @@ const favoriteAuthor: Author = {
     numBooksPublished: 5,
 };
 
-const favoriteLibrarian: Librarian = {
-    name: 'Anton',
-    email: 'anton@gmail.com',
-    department: 'mobility',
-    assistCustomer: (custName: string) => `Hello ${custName} Please take your book`,
-};
+// const favoriteLibrarian: Librarian = {
+//     name: 'Anton',
+//     email: 'anton@gmail.com',
+//     department: 'mobility',
+//     assistCustomer: (custName: string) => `Hello ${custName} Please take your book`,
+// };
 
 const offer: any = {
     book: {
@@ -290,3 +290,17 @@ class Encyclopedia extends ReferenceItem {
 // const refBook = new Encyclopedia(1, 'I love TS', 2021, 2);
 // refBook.printItem();
 // refBook.printCitation();
+
+// Interfaces for Class Types
+class UniversityLibrarian implements Librarian  {
+    name: string;
+    email: string;
+    department: string;
+    assistCustomer(custName: string): void {
+        return console.log(`${this.name} is assisting ${custName}`);
+    };
+}
+
+// const favoriteLibrarian: Librarian = new UniversityLibrarian();
+// favoriteLibrarian.name = 'Kate';
+// favoriteLibrarian.assistCustomer('Kiryl');
