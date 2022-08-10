@@ -243,6 +243,7 @@ class ReferenceItem {
     //     this.title = newTitle;
     //     this.year = newYear;
     // }
+    #id: number;
 
     private _publisher: string;
     get publisher(): string {
@@ -252,17 +253,19 @@ class ReferenceItem {
         this._publisher = newPublisher;
     }
 
-    constructor(public title: string, private year: number) {
+    constructor(id: number, public title: string, private year: number) {
         console.log('Creating a new ReferenceItem');
+        this.#id = id;
     }
 
     printItem(): void {
         console.log(`${this.title} was published in ${this.year}`);
     }
+
+    getID(): number {
+        return this.#id;
+    }
 }
 
-const ref = new ReferenceItem('JavaScrip', 2022);
-console.log(ref);
-ref.printItem();
-ref.publisher = 'Naval Action';
-console.log(ref.publisher);
+const ref = new ReferenceItem(1, 'JavaScrip', 2022);
+console.log(ref.getID());
