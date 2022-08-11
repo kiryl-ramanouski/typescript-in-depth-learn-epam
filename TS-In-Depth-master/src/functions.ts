@@ -3,7 +3,7 @@ import Category from './enums';
 import { Author, Book } from './interfaces';
 import { BookOrUndefined, BookProperties } from './types';
 
-const getAllBooks = (): readonly Book[] => {
+export const getAllBooks = (): readonly Book[] => {
     const allBooks = <const>[
         {
             id: 1,
